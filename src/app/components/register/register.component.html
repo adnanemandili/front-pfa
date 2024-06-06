@@ -1,0 +1,66 @@
+<div class="d-flex" style="height: 100vh">
+    <app-navbar></app-navbar>
+    <div class="container d-flex justify-content-center align-items-center p-lg-5 p-2">
+      <div
+        class="login d-flex justify-content-center align-items-center flex-column p-5"
+      >
+        <h1 class="mb-5">Enregistrer</h1>
+        <form [formGroup]="RegisterForm" (ngSubmit)="handleRegister()">
+          <div class="form-group mb-3">
+            <label for="firstname"><i class="bi bi-person"></i></label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="firstname"
+                id="firstname"
+                placeholder="First name"
+                formControlName="firstname"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="lastname"><i class="bi bi-person "></i></label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lastname"
+              id="lastname"
+              placeholder="Last name"
+              formControlName="lastname"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="email"><i class="bi bi-envelope-at"></i></label>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="email"
+              id="email"
+              placeholder="Email"
+              formControlName="email"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="password"><i class="bi bi-key"></i></label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              id="password"
+              placeholder="Mot de passe"
+              formControlName="password"
+            />
+          </div>
+          <button type="submit" class="btn btn-dark mb-3">Se connecter</button>
+          <p>Vous avez déjà un compte ?<a href="\authenticate" > Login </a></p>
+        </form>
+        <div class="alert alert-danger" *ngIf="loginFailed">
+          {{ errorMessage }}
+        </div>
+        <!-- success -->
+        <div class="alert alert-success" *ngIf="loginSucceded">
+          {{ successMessage }}
+        </div>
+      </div>
+    </div>
+  </div>
+  
